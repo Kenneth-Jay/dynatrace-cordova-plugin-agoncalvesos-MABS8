@@ -20,10 +20,13 @@ module.exports = function (context) {
 
     var wwwPath = path.join(context.opts.projectRoot,"www");
 
-
-        var configPath = path.join(wwwPath, "dynatraceConfig.nonprod");
-
-
+    if(process.argv.join("|").indexOf("CONFIG_DIR=") > -1) {
+        var CONFIG_DIR = process.argv.join("|").match(/CONFIG_DIR=(.*?)(\||$)/)[1]
+        configPath = path.join(wwwPath, CONFIG_DIR);
+    }else{
+        var configPath = path.join(wwwPath, "dynatraceConfig");
+    }
+    
     console.log(configPath);
     files = fs.readdirSync(configPath);
     if(files.length >0){
