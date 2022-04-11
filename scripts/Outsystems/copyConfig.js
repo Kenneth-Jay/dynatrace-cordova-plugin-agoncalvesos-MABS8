@@ -24,6 +24,7 @@ module.exports = function (context) {
         var CONFIG_DIR = process.argv.join("|").match(/CONFIG_DIR=(.*?)(\||$)/)[1];
         configPath = path.join(wwwPath, CONFIG_DIR);
     }
+    console.log(configPath);
     files = fs.readdirSync(configPath);
     if(files.length >0){
         copyFolderRecursiveSync(configPath, path.join(context.opts.projectRoot));
