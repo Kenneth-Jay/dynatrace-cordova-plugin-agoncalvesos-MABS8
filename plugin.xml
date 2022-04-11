@@ -27,6 +27,7 @@
 	
     <!-- ios -->
     <platform name="ios">
+        <preference name="CONFIG_DIR" />
         <framework src="libsqlite3.dylib" />
         <framework src="CoreLocation.framework" />
         <framework src="CoreTelephony.framework" />
@@ -37,6 +38,7 @@
         <framework src="MessageUI.framework" />
         <framework src="WebKit.framework" />
         <framework src="files/iOS/Dynatrace.xcframework" custom="true" embed="true" />
+      
         
         <config-file parent="/*" target="config.xml">
             <feature name="DynatraceCordovaPlugin">
@@ -48,6 +50,7 @@
         <source-file src="other/DynatraceCordovaPlugin.m"/>
     </platform>
 	<platform name="android">
+        <preference name="CONFIG_DIR" />
         <framework src="com.dynatrace.agent:agent-android:8.231.2.1007" />
 		<source-file src="other/DynatraceCordovaPlugin.java" target-dir="src/com/dynatrace/cordova/plugin" />
 	
@@ -56,6 +59,7 @@
 				<param name="android-package" value="com.dynatrace.cordova.plugin.DynatraceCordovaPlugin" />
 			</feature>
 		</config-file>
+        
 	</platform>
 	<platform name="windows">
 	</platform>
