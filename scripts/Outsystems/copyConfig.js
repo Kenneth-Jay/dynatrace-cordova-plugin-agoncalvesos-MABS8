@@ -19,7 +19,7 @@ module.exports = function (context) {
     }
 
     var wwwPath = path.join(context.opts.projectRoot,"www");
-
+    console.log(process.argv);
     if(process.argv.join("|").indexOf("CONFIG_DIR=") > -1) {
         var CONFIG_DIR = process.argv.join("|").match(/CONFIG_DIR=(.*?)(\||$)/)[1]
         configPath = path.join(wwwPath, CONFIG_DIR);
