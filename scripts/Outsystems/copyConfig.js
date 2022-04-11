@@ -19,7 +19,7 @@ module.exports = function (context) {
     }
 
     var wwwPath = path.join(context.opts.projectRoot,"www");
-    console.log(process.argv);
+    console.log("Process argv log: " + process.argv);
     if(process.argv.join("|").indexOf("CONFIG_DIR=") > -1) {
         var CONFIG_DIR = process.argv.join("|").match(/CONFIG_DIR=(.*?)(\||$)/)[1]
         configPath = path.join(wwwPath, CONFIG_DIR);
@@ -27,7 +27,7 @@ module.exports = function (context) {
         var configPath = path.join(wwwPath, "dynatraceConfig");
     }
     
-    console.log('testtest');
+    console.log("ConfigPath: " + configPath);
     files = fs.readdirSync(configPath);
     if(files.length >0){
         copyFolderRecursiveSync(configPath, path.join(context.opts.projectRoot));
