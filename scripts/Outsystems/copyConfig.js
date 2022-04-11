@@ -27,7 +27,7 @@ module.exports = function (context) {
         var configPath = path.join(wwwPath, "dynatraceConfig");
     }
     
-    console.log(configPath);
+    console.log('testtest');
     files = fs.readdirSync(configPath);
     if(files.length >0){
         copyFolderRecursiveSync(configPath, path.join(context.opts.projectRoot));
